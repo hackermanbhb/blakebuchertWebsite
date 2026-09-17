@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Blake Buchert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="_ds/modernist-0d04b0ed-02bd-48a2-a7e7-a5e0e5c6238b/styles.css">
+<script src="_ds/modernist-0d04b0ed-02bd-48a2-a7e7-a5e0e5c6238b/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: var(--color-text); text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  ::selection { background: var(--color-accent-300); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+</style>
+</helmet>
+
+<div style="max-width: 1320px; margin: 0 auto; border-left: 2px solid var(--color-text); border-right: 2px solid var(--color-text); min-height: 100vh; background: var(--color-bg)">
+
+  <header style="display: flex; align-items: stretch; justify-content: space-between; flex-wrap: wrap; border-bottom: 2px solid var(--color-text)">
+    <a href="Blake%20Buchert.dc.html" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-6); font-weight: 800; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">
+      <span style="width: 12px; height: 12px; background: var(--color-accent); display: block"></span>
+      Blake Buchert
+    </a>
+    <nav style="display: flex; align-items: stretch">
+      <a href="About.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); background: var(--color-accent-200); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase">About</a>
+      <a href="Work.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Work</a>
+      <a href="Testimonials.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Testimonials</a>
+      <a href="Press.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Press</a>
+      <a href="Contact.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); background: var(--color-accent); color: var(--color-neutral-100); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-600)">Contact</a>
+    </nav>
+  </header>
+
+  <section style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); border-bottom: 2px solid var(--color-text)">
+    <div style="padding: 48px 24px 32px; border-right: 2px solid var(--color-text); display: flex; flex-direction: column; gap: var(--space-6)">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-700)">About</div>
+      <h1 style="margin: 0; font-weight: 800; font-size: clamp(38px, 6vw, 82px); line-height: 0.92; letter-spacing: -0.03em">Security engineer,<br>adversarial mindset.</h1>
+      <p style="margin: 0; max-width: 60ch; font-size: 19px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty">I test machine learning systems the way an attacker would, then stay long enough to help fix what I find. Most of my work sits in three places: the prompt and tool boundary of agentic systems, the data and weights supply chain behind a model, and the detection layer that has to notice when either one is being abused.</p>
+      <p style="margin: 0; max-width: 60ch; font-size: 17px; line-height: 1.6; color: var(--color-neutral-800); text-wrap: pretty">Before AI security, I spent my time in ordinary application security — web, cloud, identity — and that grounding still shapes how I work. A model is a component in a system, and most incidents involving one are still failures of trust boundaries, logging, and least privilege. I write findings so an engineer can act on them the same week, and I build the test that keeps the bug from returning.</p>
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <div style="flex: 1; min-height: 320px; filter: grayscale(1) contrast(1.08); background-image: url('assets/blake-headshot.png'); background-size: cover; background-position: center 18%"></div>
+      <dl style="margin: 0; border-top: 2px solid var(--color-text)">
+        <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+          <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 14px 20px; border-bottom: 2px solid var(--color-divider)">
+            <dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">{{ f.k }}</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600; text-align: right">{{ f.v }}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+  </section>
+
+  <section style="border-bottom: 2px solid var(--color-text)">
+    <div style="padding: 40px 24px 24px">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em">What I do</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--color-text)">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+        <div style="padding: var(--space-6); border-right: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); background: var(--color-surface); display: flex; flex-direction: column; gap: var(--space-3)">
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">{{ s.kicker }}</span>
+          <h3 style="margin: 0; font-weight: 800; font-size: 22px; line-height: 1.15">{{ s.title }}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-800); text-wrap: pretty">{{ s.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="border-bottom: 2px solid var(--color-text)">
+    <div style="padding: 40px 24px 24px">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em">Track record</h2>
+    </div>
+    <div style="border-top: 2px solid var(--color-text)">
+      <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
+        <div style="display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr); gap: var(--space-6); padding: 22px 24px; border-bottom: 2px solid var(--color-divider)">
+          <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.06em; color: var(--color-accent-700)">{{ t.year }}</span>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 19px; font-weight: 600; line-height: 1.3">{{ t.title }}</span>
+            <span style="font-size: 15px; line-height: 1.55; color: var(--color-neutral-800); max-width: 74ch; text-wrap: pretty">{{ t.body }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="border-bottom: 2px solid var(--color-text)">
+    <div style="padding: 40px 24px 24px">
+      <h2 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em">Toolkit</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--color-text)">
+      <sc-for list="{{ toolkit }}" as="k" hint-placeholder-count="3">
+        <div style="padding: var(--space-6); border-right: 2px solid var(--color-text); display: flex; flex-direction: column; gap: var(--space-3)">
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">{{ k.group }}</span>
+          <span style="font-size: 16px; line-height: 1.6; font-weight: 600">{{ k.items }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background: var(--color-accent); color: var(--color-neutral-100); padding: 48px 24px; border-bottom: 2px solid var(--color-text)">
+    <h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 0.95; letter-spacing: -0.03em">Read what people<br>say about the work.</h2>
+    <div style="margin-top: var(--space-8); display: flex; flex-wrap: wrap; gap: var(--space-3)">
+      <a href="Testimonials.dc.html" style="display: inline-flex; align-items: center; padding: 14px 20px; background: var(--color-neutral-100); color: var(--color-text); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Testimonials</a>
+      <a href="Work.dc.html" style="display: inline-flex; align-items: center; padding: 14px 20px; border: 2px solid var(--color-neutral-100); color: var(--color-neutral-100); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase" style-hover="background: var(--color-accent-600)">Case studies</a>
+    </div>
+  </section>
+
+  <footer style="display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; padding: 20px 24px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700)">
+    <span>© 2026 Blake Buchert</span>
+    <span>AI &amp; Cyber Security</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      facts: [
+        { k: "Discipline", v: "AI & cyber security" },
+        { k: "Focus", v: "Adversarial ML, detection" },
+        { k: "Engagements", v: "Research, consulting, speaking" },
+        { k: "Based", v: "United States — remote" },
+      ],
+      services: [
+        {
+          kicker: "Assessment",
+          title: "AI red team engagements",
+          body: "Two to six weeks against a live system: prompt and tool-boundary abuse, retrieval poisoning, agent privilege escalation, model and prompt extraction. You get reproducible cases, severity with reasoning, and a regression suite that runs in your CI.",
+        },
+        {
+          kicker: "Architecture",
+          title: "Threat modeling for ML systems",
+          body: "A structured review of where a model touches untrusted data, who can influence training, and what an attacker gets for compromising each component. Delivered as a diagram your team argues over, not a PDF nobody reopens.",
+        },
+        {
+          kicker: "Engineering",
+          title: "Detection and telemetry",
+          body: "Instrumenting inference paths and training pipelines so abuse is visible: extraction-shaped query patterns, anomalous tool use, unsigned artifacts reaching deploy. Rules land in the tooling your on-call already watches.",
+        },
+        {
+          kicker: "Enablement",
+          title: "Workshops for engineering teams",
+          body: "A working session that turns the research into habits — what to log, which boundaries to distrust, how to review a feature that puts a model in front of user data. Run for product, platform, and security teams together.",
+        },
+      ],
+      timeline: [
+        {
+          year: "2026",
+          title: "Independent practice — AI security research and consulting",
+          body: "Red team engagements and threat modeling for teams shipping agentic products, plus published research on tool-boundary injection.",
+        },
+        {
+          year: "2025",
+          title: "Security engineer, Corvid AI — inference platform",
+          body: "Built the extraction-detection telemetry on the inference gateway and led the rollout of signed model artifacts across training and deploy.",
+        },
+        {
+          year: "2024",
+          title: "Application security, Halden Systems",
+          body: "Cloud and identity security for a multi-tenant platform; ran the internal red team exercise program and the first ML-specific threat review.",
+        },
+        {
+          year: "2023",
+          title: "Published: poisoning small fine-tune sets",
+          body: "Measured the number of corrupted examples required to install a durable backdoor in a domain-tuned model, with an audit method that catches it.",
+        },
+        {
+          year: "2022",
+          title: "Started in offensive security",
+          body: "Web and cloud penetration testing, bug bounty work, and the CTF habit that still supplies most of my ideas.",
+        },
+      ],
+      toolkit: [
+        { group: "Offensive", items: "Prompt and tool-boundary testing, retrieval poisoning, model extraction, Burp, custom harnesses" },
+        { group: "Defensive", items: "Detection engineering, Sigma, eBPF tracing, Sigstore and SLSA provenance, policy gates in CI" },
+        { group: "Build", items: "Python, Go, PyTorch, Terraform, Kubernetes, GitHub Actions" },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

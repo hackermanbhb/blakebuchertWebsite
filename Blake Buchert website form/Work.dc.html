@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Blake Buchert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="_ds/modernist-0d04b0ed-02bd-48a2-a7e7-a5e0e5c6238b/styles.css">
+<script src="_ds/modernist-0d04b0ed-02bd-48a2-a7e7-a5e0e5c6238b/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: var(--color-text); text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  ::selection { background: var(--color-accent-300); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+</style>
+</helmet>
+
+<div style="max-width: 1320px; margin: 0 auto; border-left: 2px solid var(--color-text); border-right: 2px solid var(--color-text); min-height: 100vh; background: var(--color-bg)">
+
+  <header style="display: flex; align-items: stretch; justify-content: space-between; flex-wrap: wrap; border-bottom: 2px solid var(--color-text)">
+    <a href="Blake%20Buchert.dc.html" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-6); font-weight: 800; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">
+      <span style="width: 12px; height: 12px; background: var(--color-accent); display: block"></span>
+      Blake Buchert
+    </a>
+    <nav style="display: flex; align-items: stretch">
+      <a href="About.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">About</a>
+      <a href="Work.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); background: var(--color-accent-200); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase">Work</a>
+      <a href="Testimonials.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Testimonials</a>
+      <a href="Press.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Press</a>
+      <a href="Contact.dc.html" style="display: flex; align-items: center; padding: 16px 20px; border-left: 2px solid var(--color-text); background: var(--color-accent); color: var(--color-neutral-100); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: var(--color-accent-600)">Contact</a>
+    </nav>
+  </header>
+
+  <section style="padding: 48px 24px 32px; border-bottom: 2px solid var(--color-text)">
+    <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-700)">Selected work — 2024 to 2026</div>
+    <h1 style="margin: 20px 0 0; font-weight: 800; font-size: clamp(38px, 6.4vw, 88px); line-height: 0.9; letter-spacing: -0.03em">Five engagements,<br>written up plainly.</h1>
+    <p style="margin: 24px 0 0; max-width: 62ch; font-size: 18px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty">Client names appear where the team agreed to be named. Findings are summarized at the level the write-up was cleared for.</p>
+  </section>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 2px solid var(--color-text)">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="padding: var(--space-6); border-right: 2px solid var(--color-text); display: flex; flex-direction: column; gap: var(--space-2)">
+        <span style="font-weight: 800; font-size: clamp(30px, 3.6vw, 48px); line-height: 1; letter-spacing: -0.03em; color: var(--color-accent)">{{ s.n }}</span>
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-700)">{{ s.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <sc-for list="{{ cases }}" as="c" hint-placeholder-count="5">
+    <article style="border-bottom: 2px solid var(--color-text)">
+      <div style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+        <div style="padding: var(--space-8) var(--space-6); border-right: 2px solid var(--color-text); display: flex; flex-direction: column; gap: var(--space-4)">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">{{ c.kicker }}</span>
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--color-neutral-700)">{{ c.year }}</span>
+          </div>
+          <h2 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3vw, 38px); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance">{{ c.title }}</h2>
+          <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">{{ c.client }}</div>
+          <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+            <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+              <dt style="min-width: 88px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-700)">Scope</dt>
+              <dd style="margin: 0; font-size: 14px; font-weight: 600">{{ c.scope }}</dd>
+            </div>
+            <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+              <dt style="min-width: 88px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-700)">Stack</dt>
+              <dd style="margin: 0; font-size: 14px; font-weight: 600">{{ c.stack }}</dd>
+            </div>
+          </dl>
+        </div>
+        <div style="padding: var(--space-8) var(--space-6); display: flex; flex-direction: column; gap: var(--space-6)">
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">The problem</div>
+            <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-800); max-width: 72ch; text-wrap: pretty">{{ c.problem }}</p>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">What I did</div>
+            <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-800); max-width: 72ch; text-wrap: pretty">{{ c.approach }}</p>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">Outcome</div>
+            <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-800); max-width: 72ch; text-wrap: pretty">{{ c.outcome }}</p>
+          </div>
+        </div>
+      </div>
+      <figure style="margin: 0; padding: var(--space-6); border-top: 2px solid var(--color-text); background: var(--color-surface); display: flex; flex-direction: column; gap: var(--space-3)">
+        <blockquote style="margin: 0; max-width: 92ch; font-size: 20px; line-height: 1.4; font-weight: 500; text-wrap: pretty">{{ c.quote }}</blockquote>
+        <figcaption style="font-size: 13px; color: var(--color-neutral-700)">
+          <span style="font-weight: 600; color: var(--color-text)">{{ c.quoteName }}</span> — {{ c.quoteRole }}
+        </figcaption>
+      </figure>
+    </article>
+  </sc-for>
+
+  <section style="background: var(--color-accent); color: var(--color-neutral-100); padding: 48px 24px; border-bottom: 2px solid var(--color-text)">
+    <h2 style="margin: 0; font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 0.95; letter-spacing: -0.03em">Want the long<br>version of any of these?</h2>
+    <div style="margin-top: var(--space-8); display: flex; flex-wrap: wrap; gap: var(--space-3)">
+      <a href="Contact.dc.html" style="display: inline-flex; align-items: center; padding: 14px 20px; background: var(--color-neutral-100); color: var(--color-text); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase" style-hover="background: var(--color-accent-200)">Request a walkthrough</a>
+      <a href="Testimonials.dc.html" style="display: inline-flex; align-items: center; padding: 14px 20px; border: 2px solid var(--color-neutral-100); color: var(--color-neutral-100); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase" style-hover="background: var(--color-accent-600)">References</a>
+    </div>
+  </section>
+
+  <footer style="display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; padding: 20px 24px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700)">
+    <span>© 2026 Blake Buchert</span>
+    <span>AI &amp; Cyber Security</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stats: [
+        { n: "11", label: "Engagements delivered" },
+        { n: "140+", label: "Findings filed" },
+        { n: "6", label: "Regression suites shipped" },
+        { n: "0", label: "Findings reopened" },
+      ],
+      cases: [
+        {
+          kicker: "Red team",
+          year: "2026",
+          title: "Prompt injection at the tool boundary",
+          client: "Northgate Labs — customer support agent",
+          scope: "5 weeks, live staging",
+          stack: "Python harness, OpenTelemetry, GitHub Actions",
+          problem:
+            "A support agent with write access to the billing API was treating retrieved help-center articles as trusted context. Content in those articles could be edited by any partner with a docs seat.",
+          approach:
+            "Built a harness that treats every tool result as attacker-controlled and replays a corpus of injection payloads through the retrieval path. Each case is a test file, so a payload that works once becomes a permanent assertion.",
+          outcome:
+            "Forty-three reproducible cases, four of them able to trigger a refund without user intent. The team moved billing calls behind a confirmation step and adopted the harness as a CI gate — it has blocked two regressions since.",
+          quote:
+            "We brought Blake in for a two-week review and kept him for the quarter. The harness he built is now the thing that tells us whether an agent change is safe to ship.",
+          quoteName: "Jackson Leonard",
+          quoteRole: "VP Engineering, Northgate Labs",
+        },
+        {
+          kicker: "Detection",
+          year: "2025",
+          title: "Model exfiltration telemetry",
+          client: "Corvid AI — inference platform",
+          scope: "Full quarter, platform team",
+          stack: "Go, eBPF, Sigma, ClickHouse",
+          problem:
+            "Competitors were suspected of distilling a production model through the public API, but nothing in the logs distinguished bulk distillation from a heavy legitimate customer.",
+          approach:
+            "Instrumented the inference gateway to record query-shape features — diversity, coverage of the output space, pacing across keys — and wrote detections on the patterns distillation produces rather than on raw volume.",
+          outcome:
+            "Time-to-detection on scraping campaigns fell from weeks to under four hours, with a false-positive rate the on-call team accepted without tuning. The rules shipped as Sigma so they live in the existing SIEM.",
+          quote:
+            "Rare combination: reads the papers closely, and still ships tooling the on-call team is happy to own. Our detections outlived his engagement, which is the only real test.",
+          quoteName: "Theo Wallace",
+          quoteRole: "Director of ML Infrastructure, Corvid AI",
+        },
+        {
+          kicker: "Supply chain",
+          year: "2025",
+          title: "Signed weights, verified pipelines",
+          client: "Halden Systems — ML platform",
+          scope: "8 weeks",
+          stack: "Sigstore, SLSA, Kubernetes admission control",
+          problem:
+            "Checkpoints moved between research and production by object-storage path. Nothing proved which code and data produced a given file, and nothing stopped an unreviewed checkpoint from being served.",
+          approach:
+            "Added provenance at every step: signed checkpoints, attested build steps for training jobs, and an admission policy that refuses to serve weights without a verifiable chain back to a reviewed commit.",
+          outcome:
+            "Reached SLSA level 3 for the training pipeline. The policy gate caught an unsigned experimental checkpoint on its second day in production — a real incident that never became one.",
+          quote:
+            "Blake found the failure we had already convinced ourselves was theoretical, then wrote the test that keeps it from coming back. He left us with a process, not a report.",
+          quoteName: "Ian Haddad",
+          quoteRole: "Security Lead, Halden Systems",
+        },
+        {
+          kicker: "Threat model",
+          year: "2024",
+          title: "Threat review for an agentic payments assistant",
+          client: "Meridian Pay",
+          scope: "3 weeks, design stage",
+          stack: "Architecture review, workshops",
+          problem:
+            "A payments assistant was heading to design review with a plan to let a model read support tickets and initiate transfers in the same session. Nobody could say which boundary was supposed to stop a bad instruction.",
+          approach:
+            "Mapped every place untrusted text reached a privileged action, then ran two workshops where product and platform engineers argued through the abuse cases against their own diagram.",
+          outcome:
+            "The design shipped with a hard separation between reading and acting, per-session spend limits, and a logging schema written before launch instead of after the first incident.",
+          quote:
+            "The clearest threat model review our AI team has had. Every finding came with a fix we could actually schedule, and the diagram is still on the wall.",
+          quoteName: "Rafe Bradshaw",
+          quoteRole: "CISO, Meridian Pay",
+        },
+        {
+          kicker: "Research",
+          year: "2024",
+          title: "Poisoning small fine-tune sets",
+          client: "Independent research — published",
+          scope: "Ongoing",
+          stack: "PyTorch, open dataset, write-up",
+          problem:
+            "Teams fine-tune on a few thousand internal examples and assume the set is too small and too private to be worth attacking. The literature mostly studied poisoning at pretraining scale.",
+          approach:
+            "Measured how few corrupted examples are needed to install a durable trigger in a domain-tuned model, then tested which practical data audits — dedup, near-duplicate clustering, label review — actually catch them.",
+          outcome:
+            "Published with a reproducible dataset and an audit checklist. Two of the four audits catch the attack reliably; the write-up is the reference I hand teams before a fine-tuning project starts.",
+          quote:
+            "I cite Blake's fine-tune poisoning numbers in nearly every design review I run. It reframed a risk my team was writing off as academic.",
+          quoteName: "Dr. Priya Raghunathan",
+          quoteRole: "Research Lead, Vector Institute for Applied Security",
+        },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
