@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Blake Buchert</title>
+<meta name="description" content="Five AI security engagements written up plainly: agent red teaming, model exfiltration detection, signed model supply chains, threat modeling and fine-tune poisoning research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="_ds/modernist/styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="masthead">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Blake Buchert</a>
+    <nav class="mainnav">
+      <a href="about.html" class="nav-a">About</a>
+      <a href="work.html" class="nav-a is-on">Work</a>
+      <a href="testimonials.html" class="nav-a">Testimonials</a>
+      <a href="press.html" class="nav-a">Press</a>
+      <a href="contact.html" class="nav-a cta">Contact</a>
+    </nav>
+  </header>
+  <section class="sec" style="padding: 48px 24px 32px">
+    <div class="kick-lg">Selected work — 2024 to 2026</div>
+    <h1 class="h1" style="margin-top: 20px">Five engagements,<br>written up plainly.</h1>
+    <p class="lede">Client names appear where the team agreed to be named. Findings are summarized at the level the write-up was cleared for.</p>
+  </section>
+  <div class="g4">
+    <div class="stat"><span class="stat-n">11</span><span class="kick" style="font-size: 12px; letter-spacing: 0.12em">Engagements delivered</span></div>
+    <div class="stat"><span class="stat-n">140+</span><span class="kick" style="font-size: 12px; letter-spacing: 0.12em">Findings filed</span></div>
+    <div class="stat"><span class="stat-n">6</span><span class="kick" style="font-size: 12px; letter-spacing: 0.12em">Regression suites shipped</span></div>
+    <div class="stat"><span class="stat-n">0</span><span class="kick" style="font-size: 12px; letter-spacing: 0.12em">Findings reopened</span></div>
+  </div>
+
+  <article class="sec">
+    <div class="case-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+      <div class="pad stack" style="gap: var(--space-4); border-right: 2px solid var(--color-text)">
+        <div class="card-top"><span class="kick-a">Red team</span><span class="kick">2026</span></div>
+        <h2 class="h2" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.05; text-wrap: balance">Prompt injection at the tool boundary</h2>
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">Northgate Labs — customer support agent</div>
+        <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Scope</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">5 weeks, live staging</dd>
+          </div>
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Stack</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Python harness, OpenTelemetry, GitHub Actions</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="pad stack" style="gap: var(--space-6)">
+        <div><div class="kick">The problem</div><p class="body" style="margin-top: 10px">A support agent with write access to the billing API was treating retrieved help-center articles as trusted context. Content in those articles could be edited by any partner with a docs seat.</p></div>
+        <div><div class="kick">What I did</div><p class="body" style="margin-top: 10px">Built a harness that treats every tool result as attacker-controlled and replays a corpus of injection payloads through the retrieval path. Each case is a test file, so a payload that works once becomes a permanent assertion.</p></div>
+        <div><div class="kick">Outcome</div><p class="body" style="margin-top: 10px">Forty-three reproducible cases, four of them able to trigger a refund without user intent. The team moved billing calls behind a confirmation step and adopted the harness as a CI gate — it has blocked two regressions since.</p></div>
+      </div>
+    </div>
+    <figure class="fill topline" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3)">
+      <blockquote style="max-width: 92ch; font-size: 20px; line-height: 1.4">We brought Blake in for a two-week review and kept him for the quarter. The harness he built is now the thing that tells us whether an agent change is safe to ship.</blockquote>
+      <figcaption><strong style="display: inline">Jackson Leonard</strong> — VP Engineering, Northgate Labs</figcaption>
+    </figure>
+  </article>
+
+  <article class="sec">
+    <div class="case-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+      <div class="pad stack" style="gap: var(--space-4); border-right: 2px solid var(--color-text)">
+        <div class="card-top"><span class="kick-a">Detection</span><span class="kick">2025</span></div>
+        <h2 class="h2" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.05; text-wrap: balance">Model exfiltration telemetry</h2>
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">Corvid AI — inference platform</div>
+        <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Scope</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Full quarter, platform team</dd>
+          </div>
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Stack</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Go, eBPF, Sigma, ClickHouse</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="pad stack" style="gap: var(--space-6)">
+        <div><div class="kick">The problem</div><p class="body" style="margin-top: 10px">Competitors were suspected of distilling a production model through the public API, but nothing in the logs distinguished bulk distillation from a heavy legitimate customer.</p></div>
+        <div><div class="kick">What I did</div><p class="body" style="margin-top: 10px">Instrumented the inference gateway to record query-shape features — diversity, coverage of the output space, pacing across keys — and wrote detections on the patterns distillation produces rather than on raw volume.</p></div>
+        <div><div class="kick">Outcome</div><p class="body" style="margin-top: 10px">Time-to-detection on scraping campaigns fell from weeks to under four hours, with a false-positive rate the on-call team accepted without tuning. The rules shipped as Sigma so they live in the existing SIEM.</p></div>
+      </div>
+    </div>
+    <figure class="fill topline" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3)">
+      <blockquote style="max-width: 92ch; font-size: 20px; line-height: 1.4">Rare combination: reads the papers closely, and still ships tooling the on-call team is happy to own. Our detections outlived his engagement, which is the only real test.</blockquote>
+      <figcaption><strong style="display: inline">Theo Wallace</strong> — Director of ML Infrastructure, Corvid AI</figcaption>
+    </figure>
+  </article>
+
+  <article class="sec">
+    <div class="case-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+      <div class="pad stack" style="gap: var(--space-4); border-right: 2px solid var(--color-text)">
+        <div class="card-top"><span class="kick-a">Supply chain</span><span class="kick">2025</span></div>
+        <h2 class="h2" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.05; text-wrap: balance">Signed weights, verified pipelines</h2>
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">Halden Systems — ML platform</div>
+        <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Scope</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">8 weeks</dd>
+          </div>
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Stack</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Sigstore, SLSA, Kubernetes admission control</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="pad stack" style="gap: var(--space-6)">
+        <div><div class="kick">The problem</div><p class="body" style="margin-top: 10px">Checkpoints moved between research and production by object-storage path. Nothing proved which code and data produced a given file, and nothing stopped an unreviewed checkpoint from being served.</p></div>
+        <div><div class="kick">What I did</div><p class="body" style="margin-top: 10px">Added provenance at every step: signed checkpoints, attested build steps for training jobs, and an admission policy that refuses to serve weights without a verifiable chain back to a reviewed commit.</p></div>
+        <div><div class="kick">Outcome</div><p class="body" style="margin-top: 10px">Reached SLSA level 3 for the training pipeline. The policy gate caught an unsigned experimental checkpoint on its second day in production — a real incident that never became one.</p></div>
+      </div>
+    </div>
+    <figure class="fill topline" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3)">
+      <blockquote style="max-width: 92ch; font-size: 20px; line-height: 1.4">Blake found the failure we had already convinced ourselves was theoretical, then wrote the test that keeps it from coming back. He left us with a process, not a report.</blockquote>
+      <figcaption><strong style="display: inline">Ian Haddad</strong> — Security Lead, Halden Systems</figcaption>
+    </figure>
+  </article>
+
+  <article class="sec">
+    <div class="case-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+      <div class="pad stack" style="gap: var(--space-4); border-right: 2px solid var(--color-text)">
+        <div class="card-top"><span class="kick-a">Threat model</span><span class="kick">2024</span></div>
+        <h2 class="h2" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.05; text-wrap: balance">Threat review for an agentic payments assistant</h2>
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">Meridian Pay</div>
+        <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Scope</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">3 weeks, design stage</dd>
+          </div>
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Stack</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Architecture review, workshops</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="pad stack" style="gap: var(--space-6)">
+        <div><div class="kick">The problem</div><p class="body" style="margin-top: 10px">A payments assistant was heading to design review with a plan to let a model read support tickets and initiate transfers in the same session. Nobody could say which boundary was supposed to stop a bad instruction.</p></div>
+        <div><div class="kick">What I did</div><p class="body" style="margin-top: 10px">Mapped every place untrusted text reached a privileged action, then ran two workshops where product and platform engineers argued through the abuse cases against their own diagram.</p></div>
+        <div><div class="kick">Outcome</div><p class="body" style="margin-top: 10px">The design shipped with a hard separation between reading and acting, per-session spend limits, and a logging schema written before launch instead of after the first incident.</p></div>
+      </div>
+    </div>
+    <figure class="fill topline" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3)">
+      <blockquote style="max-width: 92ch; font-size: 20px; line-height: 1.4">The clearest threat model review our AI team has had. Every finding came with a fix we could actually schedule, and the diagram is still on the wall.</blockquote>
+      <figcaption><strong style="display: inline">Rafe Bradshaw</strong> — CISO, Meridian Pay</figcaption>
+    </figure>
+  </article>
+
+  <article class="sec">
+    <div class="case-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+      <div class="pad stack" style="gap: var(--space-4); border-right: 2px solid var(--color-text)">
+        <div class="card-top"><span class="kick-a">Research</span><span class="kick">2024</span></div>
+        <h2 class="h2" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.05; text-wrap: balance">Poisoning small fine-tune sets</h2>
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-neutral-700)">Independent research — published</div>
+        <dl style="margin: auto 0 0; display: grid; gap: var(--space-2); padding-top: var(--space-6)">
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Scope</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">Ongoing</dd>
+          </div>
+          <div style="display: flex; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: 10px">
+            <dt class="kick" style="min-width: 88px; letter-spacing: 0.12em">Stack</dt>
+            <dd style="margin: 0; font-size: 14px; font-weight: 600">PyTorch, open dataset, write-up</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="pad stack" style="gap: var(--space-6)">
+        <div><div class="kick">The problem</div><p class="body" style="margin-top: 10px">Teams fine-tune on a few thousand internal examples and assume the set is too small and too private to be worth attacking. The literature mostly studied poisoning at pretraining scale.</p></div>
+        <div><div class="kick">What I did</div><p class="body" style="margin-top: 10px">Measured how few corrupted examples are needed to install a durable trigger in a domain-tuned model, then tested which practical data audits — dedup, near-duplicate clustering, label review — actually catch them.</p></div>
+        <div><div class="kick">Outcome</div><p class="body" style="margin-top: 10px">Published with a reproducible dataset and an audit checklist. Two of the four audits catch the attack reliably; the write-up is the reference I hand teams before a fine-tuning project starts.</p></div>
+      </div>
+    </div>
+    <figure class="fill topline" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3)">
+      <blockquote style="max-width: 92ch; font-size: 20px; line-height: 1.4">I cite Blake's fine-tune poisoning numbers in nearly every design review I run. It reframed a risk my team was writing off as academic.</blockquote>
+      <figcaption><strong style="display: inline">Dr. Priya Raghunathan</strong> — Research Lead, Vector Institute for Applied Security</figcaption>
+    </figure>
+  </article>
+
+  <section class="poster">
+    <h2>Want the long<br>version of any of these?</h2>
+    <div class="row"><a href="contact.html" class="btn-on-red">Request a walkthrough</a><a href="testimonials.html" class="btn-on-red-line">References</a></div>
+  </section>
+  <footer class="foot">
+    <span>© 2026 Blake Buchert</span>
+    <span class="foot-links">
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="press.html">Press</a>
+      <a href="contact.html">Contact</a>
+    </span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blakebuchert.com/sitemap.xml
